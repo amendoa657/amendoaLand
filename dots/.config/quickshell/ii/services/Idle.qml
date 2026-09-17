@@ -11,7 +11,7 @@ Singleton {
     id: root
 
     property alias inhibit: idleInhibitor.enabled
-    inhibit: false
+    inhibit: true
 
     Connections {
         target: Persistent

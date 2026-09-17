@@ -117,9 +117,9 @@ Singleton {
                     property string expressive: "Space Grotesk"
                 }
                 property JsonObject transparency: JsonObject {
-                    property bool enable: false
+                    property bool enable: true
                     property bool automatic: true
-                    property real backgroundTransparency: 0.11
+                    property real backgroundTransparency: 0.4
                     property real contentTransparency: 0.57
                 }
                 property JsonObject wallpaperTheming: JsonObject {
@@ -206,6 +206,35 @@ Singleton {
                     property JsonObject weather: JsonObject {
                         property bool enable: false
                         property string placementStrategy: "free" // "free", "leastBusy", "mostBusy"
+                        property real x: 400
+                        property real y: 100
+                    }
+                    property JsonObject anniversary: JsonObject {
+                        property bool enable: true
+                        property string placementStrategy: "free" // "free", "leastBusy", "mostBusy"
+                        property real x: 400
+                        property real y: 300
+                        property string startDate: "2026-07-22" // YYYY-MM-DD
+                        property string label: "dias juntos"
+                      }
+
+                    property JsonObject calendar: JsonObject {
+                        property bool enable: true
+                        property string placementStrategy: "free"
+                        property real x: 100
+                        property real y: 100
+                    }
+
+                    property JsonObject photos: JsonObject {
+                        property bool enable: true
+                        property string placementStrategy: "free"
+                        property real x: 400
+                        property real y: 100
+                      }
+
+                    property JsonObject photos2: JsonObject {
+                        property bool enable: true
+                        property string placementStrategy: "free"
                         property real x: 400
                         property real y: 100
                     }

@@ -1,11 +1,11 @@
 import qs
+import qs.services
 import qs.modules.common
 import qs.modules.common.widgets
 import QtQuick
 import QtQuick.Layouts
 import Quickshell
 import Quickshell.Hyprland
-import Quickshell.Services.Pipewire
 import Quickshell.Services.UPower
 
 Item {
@@ -89,11 +89,11 @@ Item {
             visible: Config.options.bar.utilButtons.showMicToggle
             sourceComponent: CircleUtilButton {
                 Layout.alignment: Qt.AlignVCenter
-                onClicked: Quickshell.execDetached(["wpctl", "set-mute", "@DEFAULT_SOURCE@", "toggle"])
+                onClicked: Notifications.silent = !Notifications.silent
                 MaterialSymbol {
                     horizontalAlignment: Qt.AlignHCenter
                     fill: 0
-                    text: Pipewire.defaultAudioSource?.audio?.muted ? "mic_off" : "mic"
+                    text: Notifications.silent ? "notifications_paused" : "notifications_active"
                     iconSize: Appearance.font.pixelSize.large
                     color: Appearance.colors.colOnLayer2
                 }

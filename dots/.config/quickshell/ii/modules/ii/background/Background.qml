@@ -17,6 +17,10 @@ import Quickshell.Hyprland
 import qs.modules.ii.background.widgets
 import qs.modules.ii.background.widgets.clock
 import qs.modules.ii.background.widgets.weather
+import qs.modules.ii.background.widgets.anniversary
+import qs.modules.ii.background.widgets.callendar
+import qs.modules.ii.background.widgets.photos
+import qs.modules.ii.background.widgets.photos2
 
 Variants {
     id: root
@@ -266,6 +270,29 @@ Variants {
                 }
 
                 FadeLoader {
+                    shown: Config.options.background.widgets.anniversary.enable
+                    sourceComponent: AnniversaryWidget {
+                        screenWidth: bgRoot.screen.width
+                        screenHeight: bgRoot.screen.height
+                        scaledScreenWidth: bgRoot.screen.width
+                        scaledScreenHeight: bgRoot.screen.height
+                        wallpaperScale: 1
+                    }
+                  }
+
+                FadeLoader {
+                    shown: Config.options.background.widgets.calendar.enable
+                    sourceComponent: CalendarWidget {
+                        screenWidth: bgRoot.screen.width
+                        screenHeight: bgRoot.screen.height
+                        scaledScreenWidth: bgRoot.screen.width
+                        scaledScreenHeight: bgRoot.screen.height
+                        wallpaperScale: 1
+                    }
+                }
+                  
+
+                FadeLoader {
                     shown: Config.options.background.widgets.clock.enable
                     sourceComponent: ClockWidget {
                         screenWidth: bgRoot.screen.width
@@ -274,6 +301,28 @@ Variants {
                         scaledScreenHeight: bgRoot.screen.height
                         wallpaperScale: 1
                         wallpaperSafetyTriggered: bgRoot.wallpaperSafetyTriggered
+                    }
+                  }
+
+                FadeLoader {
+                    shown: Config.options.background.widgets.photos.enable
+                    sourceComponent: PhotoWidget {
+                      screenWidth: bgRoot.screen.width
+                      screenHeight: bgRoot.screen.height
+                      scaledScreenWidth: bgRoot.screen.width
+                      scaledScreenHeight: bgRoot.screen.height
+                      wallpaperScale: 1
+                    }
+                  }
+
+                  FadeLoader {
+                    shown: Config.options.background.widgets.photos.enable
+                    sourceComponent: PhotoWidget2 {
+                      screenWidth: bgRoot.screen.width
+                      screenHeight: bgRoot.screen.height
+                      scaledScreenWidth: bgRoot.screen.width
+                      scaledScreenHeight: bgRoot.screen.height
+                      wallpaperScale: 1
                     }
                 }
             }

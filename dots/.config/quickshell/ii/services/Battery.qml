@@ -8,12 +8,74 @@ import QtQuick
 import Quickshell.Io
 
 Singleton {
-    id: root
-    property bool available: UPower.displayDevice.isLaptopBattery
-    property var chargeState: UPower.displayDevice.state
-    property bool isCharging: chargeState == UPowerDeviceState.Charging
+  id: root
+
+    property string phoneDeviceId: "fe08adfa88664ff488cafe2d338d96fd"
+
+    property bool available: true
+    property var chargeState: 4
+    property bool isCharging: false
     property bool isPluggedIn: isCharging || chargeState == UPowerDeviceState.PendingCharge
-    property real percentage: UPower.displayDevice?.percentage ?? 1
+    property real percentage: 1
+
+
+
+
+    Process {
+      id: batteryProc
+
+      running: true
+      command: ["qdbus", "org.kde.kdeconnect",
+              "/modules/kdeconnect/devices/fe08adfa88664ff488cafe2d338d96fd/battery",
+              "org.kde.kdeconnect.device.battery.charge"]
+
+      stdout: SplitParser {
+          onRead: data => {
+              percentage = parseInt(data) / 100
+          }
+      }
+    }
+
+    Process {
+      id: isChargingProc
+      running: true
+      command: ["qdbus", "org.kde.kdeconnect",
+              "/modules/kdeconnect/devices/fe08adfa88664ff488cafe2d338d96fd/battery",
+              "org.kde.kdeconnect.device.battery.isCharging"]
+
+      stdout: SplitParser {
+          onRead: data => {
+            isCharging = (data.trim()==="true")
+            isPluggedIn = data
+
+
+            if(percentage>=100) {
+              chargeState=4
+            } else if(isCharging){
+              chargeState=1
+            }  else {
+              chargeState=0
+            }
+          }
+      }
+  }
+
+
+  Timer {
+    interval: 3000 
+    running: true
+    repeat: true
+    triggeredOnStart: true 
+    onTriggered: {
+      batteryProc.running = true
+      isChargingProc.running = true
+      
+    }
+  }
+
+
+
+
     readonly property bool allowAutomaticSuspend: Config.options.battery.automaticSuspend
     readonly property bool soundEnabled: Config.options.sounds.battery
 

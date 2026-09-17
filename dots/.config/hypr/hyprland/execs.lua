@@ -5,6 +5,7 @@ hl.on("hyprland.start", function ()
     hl.exec_cmd("$HOME/.config/hypr/hyprland/scripts/start_geoclue_agent.sh")
     hl.exec_cmd("qs -c $qsConfig")
     hl.exec_cmd("$HOME/.config/hypr/custom/scripts/__restore_video_wallpaper.sh")
+    hl.exec_cmd("hyprctl plugin load /home/amendoa/hyprglass/hyprglass.so")
 
     -- Core components (authentication, lock screen, notification daemon)
     hl.exec_cmd("gnome-keyring-daemon --start --components=secrets")
@@ -22,4 +23,12 @@ hl.on("hyprland.start", function ()
 
     -- Cursor
     hl.exec_cmd("hyprctl setcursor Bibata-Modern-Classic 24")
+  
+    hl.exec_cmd("kdeconnect-indicator")
+
+    hl.exec_cmd("$HOME/.local/bin/kdeconnect-automount.sh")
+
+    hl.exec_cmd('kitty --class meu-term -e fish -c "neofetch; read"')
+
+    hl.exec_cmd('firefox --class nav-fox')
 end)

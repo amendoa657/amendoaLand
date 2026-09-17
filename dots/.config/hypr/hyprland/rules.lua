@@ -1,10 +1,10 @@
 -- ######## Window rules ########
 
 -- Disable blur for xwayland context menus
-hl.window_rule({match = {class = "^()$", title = "^()$" },                   no_blur = true })
+hl.window_rule({match = {class = "^()$", title = "^()$" },                   no_blur = false })
 
 -- Disable blur for every window
-hl.window_rule({match = {class = ".*" }, no_blur = true })
+hl.window_rule({match = {class = ".*" }, no_blur = false })
 
 -- Floating
 hl.window_rule({match = {title = "^(Open File)(.*)$" },                      center = true})
@@ -131,7 +131,7 @@ hl.layer_rule({ match = { namespace = "osk[0-9]*" }, ignore_alpha = 0.6})
 -- Quickshell: illogical-impulse
 hl.layer_rule({ match = { namespace = "quickshell:.*" }, blur_popups = true})
 hl.layer_rule({ match = { namespace = "quickshell:.*" }, blur = true})
-hl.layer_rule({ match = { namespace = "quickshell:.*" }, ignore_alpha = 0.79})
+hl.layer_rule({ match = { namespace = "quickshell:.*" }, ignore_alpha = 0.1})
 hl.layer_rule({ match = { namespace = "quickshell:bar" }, animation = "slide"})
 hl.layer_rule({ match = { namespace = "quickshell:actionCenter" }, no_anim = true})
 hl.layer_rule({ match = { namespace = "quickshell:cheatsheet" }, animation = "slide bottom"})
@@ -167,3 +167,58 @@ hl.layer_rule({ match = { namespace = "quickshell:wTaskView" }, no_anim = true})
 
 -- Launchers need to be FAST
 hl.layer_rule({ match = { namespace = "gtk4-layer-shell" }, no_anim = true})
+
+
+if hl.plugin.hyprglass then
+    local hg = hl.plugin.hyprglass
+
+    hg.config({
+        default_theme = "dark",
+        default_preset = "clear",
+        layers = { enabled = true },
+    })
+
+    hg.layer("quickshell:bar", { mask_threshold = 0.3 })
+    hg.layer("quickshell:dock", { mask_threshold = 0.3 })
+    hg.layer("quickshell:sidebarRight", { mask_threshold = 0.3 })
+    hg.layer("quickshell:sidebarLeft", { mask_threshold = 0.3 })
+    hg.layer("quickshell:notificationPopup", { mask_threshold = 0.3 })
+    hg.layer("quickshell:cheatsheet", { mask_threshold = 0.3 })
+    hg.layer("quickshell:overview", { mask_threshold = 0.3 })
+    hg.layer("quickshell:overlay", { mask_threshold = 0.3 })
+    hg.layer("quickshell:session", { mask_threshold = 0.3 })
+    --hg.layer("quickshell:background", { mask_threshold=0})
+
+    hg.preset("clear", {
+        enabled = 1,
+        blur_strength = 1.5,
+        refraction_strength = 5.0,
+        chromatic_aberration = 0.5,
+        --fresnel_strength = 1.2,
+        specular_strength = 1,
+        saturation = 1.3,
+        adaptive_boost = 0.1,
+        dark = {brightness = 1.0},
+    })
+end
+
+
+
+
+hl.window_rule({match = {class = "^(meu-term)$"}, float = true})
+hl.window_rule({match = {class = "^(meu-term)$"}, move = {"(monitor_w*0.28)", "(monitor_h*0.25)"} })
+hl.window_rule({match = {class = "^(meu-term)$"}, size = {"(monitor_w*0.50)", "(monitor_h*0.50)"} })
+
+hl.window_rule({match = {class = "^(meu-term)$"}, workspace = "1"})
+--hl.window_rule({match = {class = "^(kitty)$"}, inactive_opacity = 0.40})
+hl.window_rule({match = {class = "^(kitty)$"}, opacity = "0.85 0.65"})
+
+--firefox
+
+hl.window_rule({match = {class = "^(nav-fox)$"}, float = false}) 
+hl.window_rule({match = {class = "^(nav-fox)$"}, workspace = "3"})
+
+
+
+
+

@@ -14,8 +14,8 @@ StyledPopup {
 
         // Header
         StyledPopupHeaderRow {
-            icon: "battery_android_full"
-            label: Translation.tr("Battery")
+            icon: "phone_android"
+            label: Translation.tr("Celular do Italo")
         }
 
         StyledPopupValueRow {
@@ -64,9 +64,9 @@ StyledPopup {
         }
 
         StyledPopupValueRow {
-            icon: "heart_check"
-            label: Translation.tr("Health:")
-            value: `${(Battery.health).toFixed(1)}%`
+          icon: "battery_charging_full"
+            label: Translation.tr("Bateria: ")
+            value: (Battery.percentage*100).toFixed(0)+"%"
         }
     }
 }
