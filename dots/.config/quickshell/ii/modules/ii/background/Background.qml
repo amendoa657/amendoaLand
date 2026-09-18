@@ -21,6 +21,7 @@ import qs.modules.ii.background.widgets.anniversary
 import qs.modules.ii.background.widgets.callendar
 import qs.modules.ii.background.widgets.photos
 import qs.modules.ii.background.widgets.photos2
+import qs.modules.ii.background.widgets.media
 
 Variants {
     id: root
@@ -315,9 +316,20 @@ Variants {
                     }
                   }
 
-                  FadeLoader {
+                FadeLoader {
                     shown: Config.options.background.widgets.photos.enable
                     sourceComponent: PhotoWidget2 {
+                      screenWidth: bgRoot.screen.width
+                      screenHeight: bgRoot.screen.height
+                      scaledScreenWidth: bgRoot.screen.width
+                      scaledScreenHeight: bgRoot.screen.height
+                      wallpaperScale: 1
+                    }
+                  }
+
+                FadeLoader {
+                    shown: Config.options.background.widgets.media.enable
+                    sourceComponent: MediaWidget {
                       screenWidth: bgRoot.screen.width
                       screenHeight: bgRoot.screen.height
                       scaledScreenWidth: bgRoot.screen.width

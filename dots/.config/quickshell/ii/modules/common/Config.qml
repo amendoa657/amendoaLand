@@ -237,6 +237,13 @@ Singleton {
                         property string placementStrategy: "free"
                         property real x: 400
                         property real y: 100
+                      }
+
+                    property JsonObject media: JsonObject {
+                        property bool enable: true
+                        property string placementStrategy: "free"
+                        property real x: 100
+                        property real y: 400
                     }
                 }
                 property string wallpaperPath: ""
