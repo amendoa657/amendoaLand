@@ -1,3 +1,4 @@
+import Quickshell
 import qs.modules.common
 import qs.modules.common.widgets
 import qs.services
@@ -12,9 +13,12 @@ MouseArea {
     readonly property bool isPluggedIn: Battery.isPluggedIn
     readonly property real percentage: Battery.percentage
     readonly property bool isLow: percentage <= Config.options.battery.low / 100
-
+    
     implicitWidth: batteryProgress.implicitWidth
     implicitHeight: Appearance.sizes.barHeight
+
+    acceptedButtons: Qt.LeftButton
+    onClicked: Quickshell.execDetached(["bash", "-c", "pkill scrcpy || $HOME/.local/bin/celular.sh"])
 
     hoverEnabled: !Config.options.bar.tooltips.clickToShow
 
