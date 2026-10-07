@@ -76,19 +76,34 @@
     <h3></h3>
 </div>
 
-<div align="center">
-    <img src="assets/illogical-impulse.svg" alt="illogical-impulse logo" style="float:left; width:400;">
-</div>
+## Meu setup atual
 
-Widget system: Quickshell | Support: Yes
+Este repositório é a configuração do meu desktop Linux com Hyprland, Quickshell, Kitty e Neovim. A ideia é unir produtividade, automação e uma interface visualmente consistente, sem abrir mão da velocidade do teclado.
 
-[Showcase video](https://www.youtube.com/watch?v=RPwovTInagE)
+O visual atual foi evoluído para uma linguagem de **liquid glass**: painéis translúcidos, desfoque, bordas arredondadas, sombras suaves e cores derivadas do wallpaper. O resultado é uma interface com profundidade, mas ainda legível e funcional.
 
-| AI, settings app | Some widgets |
-|:---|:---------------|
-| <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/5d4e7d07-d0b4-4406-a4c9-ed7ba90e3fe4" /> | <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/6a32395f-9437-4192-8faf-2951a9e84cbe" /> |
-| Window management | wow look its orange |
-| <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/c51bed8b-3670-4d4c-9074-873be224fb8e" /> | <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/98703a66-0743-439f-a721-cef7afa6ab95" /> |
+### O que foi atualizado
+
+- **Matugen em todo o desktop**: o wallpaper alimenta a paleta do sistema e mantém barra, painéis, widgets e terminal visualmente sincronizados.
+- **Widgets de fundo**: calendário, relógio, clima, status do celular, contador pessoal, dock e controle de mídia ficam integrados ao desktop sem parecerem janelas soltas.
+- **Galeria do celular via Wi‑Fi**: um widget consulta os álbuns da galeria do celular através do KDE Connect e traz essas imagens para dentro do desktop.
+- **Bateria na barra superior**: um widget dedicado exibe rapidamente o nível da bateria do celular na barra, mantendo o estado do dispositivo sempre visível.
+- **Liquid glass**: superfícies com transparência e blur criam camadas sobre o wallpaper, enquanto o contraste e os espaçamentos mantêm a leitura confortável.
+- **Painel lateral inteligente**: `Super`+`A` abre a central com recursos de IA, tradução e outras ferramentas sem tirar o foco do workspace.
+- **Folha de atalhos completa**: `Super`+`/` mostra os atalhos de shell, janelas, mídia, screenshots, workspaces e sessão.
+- **Fluxo de desenvolvimento**: Neovim para editar a configuração, Kitty como terminal principal e terminal flutuante centralizado para comandos rápidos e inspeção do sistema.
+- **Workspaces limpos**: cada workspace pode ficar dedicado a uma tarefa, com o shell e os widgets permanecendo sempre disponíveis no fundo.
+
+### Galeria do setup
+
+| 4 · Matugen + widgets de fundo | 3 · Painel lateral liquid glass |
+|:---:|:---:|
+| ![Desktop com Matugen e widgets](assets/screenshots/04-matugen-liquid-glass.png) | ![Painel lateral com efeito liquid glass](assets/screenshots/03-panel-liquid-glass.png) |
+| 5 · Atalhos do sistema | 1 · Neovim + terminal flutuante |
+|:---:|:---:|
+| ![Folha de atalhos do Hyprland](assets/screenshots/05-shortcuts-liquid-glass.png) | ![Neovim com terminal flutuante exibindo neofetch](assets/screenshots/01-neovim-neofetch.png) |
+
+As imagens acima foram capturadas do sistema em execução, com a mídia limpa para destacar o desktop, os widgets e o acabamento visual do shell.
 
 <div align="center">
     <h2>• thank you •</h2>
@@ -128,43 +143,31 @@ Widget system: Quickshell | Support: Yes
 
 Widget system: AGS | Support: No
 
-| AI | Common widgets |
-|:---|:---------------|
-| ![image](https://github.com/user-attachments/assets/9d7af13f-89ef-470d-ba78-d2288b79cf60) | ![image](https://github.com/end-4/dots-hyprland/assets/97237370/406b72b6-fa38-4f0d-a6c4-4d7d5d5ddcb7) |
-| Window management | Weeb power |
-| ![image](https://github.com/user-attachments/assets/02983b9b-79ba-4c25-8717-90bef2357ae5) | ![image](https://github.com/user-attachments/assets/bbb332ec-962a-4e88-a95b-486d0bd8ce76) |
+Versão anterior baseada em AGS. Mantida apenas como referência histórica.
 
 #### m3ww
 
 Widget system: EWW | Support: No
 
-<a href="https://streamable.com/85ch8x">
-<img src="https://github.com/end-4/dots-hyprland/assets/97237370/09533e64-b6d7-47eb-a840-ee90c6776adf" alt="Material Eww!">
-</a>
+Versão anterior baseada em EWW, sem suporte ativo.
 
 #### NovelKnock
 
 Widget system: EWW | Support: No
 
-<a href="https://streamable.com/7vo61k">
-<img src="https://github.com/end-4/dots-hyprland/assets/97237370/42903d03-bf6f-49d4-be7f-dd77e6cb389d" alt="Desktop Preview">
-</a>
+Variação visual experimental, sem suporte ativo.
 
 #### Hybrid
 
 Widget system: EWW | Support: No
 
-<a href="https://streamable.com/4oogot">
-<img src="https://github.com/end-4/dots-hyprland/assets/97237370/190deb1e-f6f5-46ce-8cf0-9b39944c079d" alt="click the circles!">
-</a>
+Variação experimental com foco em interações circulares, sem suporte ativo.
 
 #### Windoes
 
 Widget system: EWW | Support: No
 
-<a href="https://streamable.com/5qx614">
-<img src="https://github.com/end-4/dots-hyprland/assets/97237370/b15317b1-f295-49f5-b90c-fb6328b8d886" alt="Desktop Preview">
-</a>
+Variação inspirada no Windows, sem suporte ativo.
 
 
 
