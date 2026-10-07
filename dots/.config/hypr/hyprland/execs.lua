@@ -24,9 +24,11 @@ hl.on("hyprland.start", function ()
     -- Cursor
     hl.exec_cmd("hyprctl setcursor Bibata-Modern-Classic 24")
   
-    hl.exec_cmd("kdeconnect-indicator")
-
-    hl.exec_cmd("$HOME/.local/bin/kdeconnect-automount.sh")
+    -- KDE Connect: aguardar o ambiente D-Bus antes de subir o daemon,
+    -- o indicador e a montagem automática do celular.
+    hl.exec_cmd("sleep 2 && (pgrep -x kdeconnectd >/dev/null || kdeconnectd)")
+    hl.exec_cmd("sleep 3 && kdeconnect-indicator")
+    hl.exec_cmd("sleep 6 && $HOME/.local/bin/kdeconnect-automount.sh")
 
     hl.exec_cmd('kitty --class meu-term -e fish -c "neofetch; read"')
 
